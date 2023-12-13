@@ -1,0 +1,14 @@
+{
+  "name": "El Pais - Premium Account",
+  "description": "Premium articles get unblocked",
+  "version": "1.0",
+  "minimum_chrome_version": "10.0",
+  "manifest_version": 3,
+  "permissions": ["scripting", "tabs", "activeTab"],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "index.js"
+  }
+}
