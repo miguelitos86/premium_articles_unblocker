@@ -22,7 +22,7 @@ function getDOM() {
 }
 
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
    if (message.action === 'executeBackgroundScript') {
       let domRes = await chrome.scripting.executeScript({target: {tabId: info.tabId}, func: getDOM,}).catch(console.error);
    
