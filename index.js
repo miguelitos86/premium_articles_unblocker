@@ -21,8 +21,11 @@ function getDOM() {
    return [];
 }
 
-chrome.tabs.onActivated.addListener(async info => {
-   let domRes = await chrome.scripting.executeScript({target: {tabId: info.tabId}, func: getDOM,}).catch(console.error);
 
-   if (!domRes) return;
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+   if (message.action === 'executeBackgroundScript') {
+      let domRes = await chrome.scripting.executeScript({target: {tabId: info.tabId}, func: getDOM,}).catch(console.error);
+   
+      if (!domRes) return;
+   }
 });
