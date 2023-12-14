@@ -1,4 +1,4 @@
-function getDOM() {
+function modifyDOM() {
     // remove class fc-ab-root
     let elements = document?.getElementsByClassName('fc-ab-root');
     while(elements?.length > 0){
@@ -21,5 +21,5 @@ function getDOM() {
     return [];
  }
 
- // Execute getDOM function when content script is injected
- getDOM();
+ // Execute modifyDOM function when content script is injected
+modifyDOM();
