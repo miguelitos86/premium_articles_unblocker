@@ -26,7 +26,20 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
    if (message.action === 'executeBackgroundScript') {
       //let domRes = await chrome.scripting.executeScript({target: {tabId: info.tabId}, func: getDOM,}).catch(console.error);
       console.log("Well done");
-      getDOM();
+      // query info about the currently active tab in the current window
+      // provides  callback function that receives an array of tabs
+      chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+         // Currently active tab
+         const activeTab = tabs[0];
+         // Method that allows background script to execute a script within a tab
+         // Takes an object as argument (the tab) and the function to be executed
+         chrome.scripting.executeScript({
+            target: {tabId:activeTab.id},
+            function: () => {
+               getDOM();
+            },
+         });
+      });
       //if (!domRes) return;
    }
 });
