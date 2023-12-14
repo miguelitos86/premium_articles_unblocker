@@ -31,6 +31,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
          // Currently active tab
          const activeTab = tabs[0];
+         console.log(tabs);
          // Method that allows background script to execute a script within a tab
          // Takes an object as argument (the tab) and the function to be executed
          chrome.scripting.executeScript({
