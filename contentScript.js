@@ -35,7 +35,9 @@ console.log(window.modifyDOM); // Check if modifyDOM is attached to the window o
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
    if (message.action === 'executeContentScript') {
      // Execute the modifyDOM function when instructed by the extension
-     modifyDOM();
+     if (typeof window.modifyDOM === 'undefined') {
+      window.modifyDOM = modifyDOM;
+    }
    }
  });
 
