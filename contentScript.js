@@ -23,3 +23,5 @@ function modifyDOM() {
 
  // Execute modifyDOM function when content script is injected
 modifyDOM();
+
+export {modifyDOM};
