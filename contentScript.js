@@ -29,3 +29,6 @@ if (typeof window.modifyDOM === 'undefined') {
   window.modifyDOM = modifyDOM;
 }
 
+console.log(window.modifyDOM); // Check if modifyDOM is attached to the window object
+
+
