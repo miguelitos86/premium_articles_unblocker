@@ -12,7 +12,8 @@
   ],
   "action": {
     "default_popup": "popup_premium.html",
-    "default_icon": "money.png"
+    "default_icon": "money.png",
+    "default_title": "Action Button"
   },
   "permissions": ["scripting", "tabs", "activeTab"],
   "host_permissions": [
