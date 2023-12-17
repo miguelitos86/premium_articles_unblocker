@@ -24,12 +24,6 @@ function modifyDOM() {
  // Execute modifyDOM function when content script is injected
 modifyDOM();
 
-// Attach the function to the window object
-if (typeof window.modifyDOM === 'undefined') {
-  window.modifyDOM = modifyDOM;
-}
-
-console.log(window.modifyDOM); // Check if modifyDOM is attached to the window object
 
 
 
