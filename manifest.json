@@ -6,19 +6,18 @@
   "manifest_version": 3,
   "content_scripts":[
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://*.elpais.com/*"],
       "js": ["contentScript.js"]
     }
   ],
+
   "action": {
-    "default_popup": "popup_premium.html",
-    "default_icon": "money.png"
+    "default_title": "El Pais Premium",
+    "default_icon": "read.png"
   },
+
   "permissions": ["scripting", "tabs", "activeTab"],
   "host_permissions": [
     "*://*/*"
-  ],
-  "background": {
-    "service_worker": "index.js"
-  }
+  ]
 }
